@@ -205,6 +205,26 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-sm-4 d-flex align-items-stretch mb-4">
+                        <div class="card h-100">
+                            <h3 class="card-header d-flex">QUETSCHI 1€</h3>
+                            <div class="card-body flex-column mx-auto">
+                                <img src="img/quetschi.png" alt="Quetschi" onclick="countClick('Quetschi')">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 d-flex align-items-stretch mb-4">
+                        <div class="card h-100">
+                            <h3 class="card-header d-flex">CHIPS 2€</h3>
+                            <div class="card-body flex-column mx-auto">
+                                <img src="img/chips.webp" alt="Chips" onclick="countClick('Chips')">
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
                 <!-- Weitere Items können hier hinzugefügt werden -->
 
@@ -259,7 +279,9 @@
             Pommes: 0,
             Ketchup: 0,
             Trauben: 0,
-            Brot: 0
+            Brot: 0,
+            Quetschi: 0,
+            Chips: 0
         };
 
         const price = {
@@ -272,7 +294,9 @@
             Pommes: 4,
             Ketchup: 3,
             Trauben: 2,
-            Brot: 3
+            Brot: 3,
+            Quetschi: 1,
+            Chips: 2
         }
 
         function update_kassenbon(item) {
