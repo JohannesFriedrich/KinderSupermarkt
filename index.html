@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Kinder-Supermarkt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ca844e;
+            background-image: url("img/background.webp");
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            padding: 0;
+            padding-top: 20px;
+        }
+
+        .event-box-red {
+            background-color: #c98474;
+            color: white;
+        }
+
+        .event-box-purple {
+            background-color: #874C62;
+            color: white;
+        }
+
+        .event-box-orange {
+            background-color: #ca844e;
+            color: white;
+        }
+
+        .item-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .item {
+            text-align: center;
+        }
+
+        img {
+            cursor: pointer;
+            width: 100px;
+            height: auto;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        .card {
+            color: black;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            width: 100%;
+            /* Volle Breite */
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-header {
+            border-bottom: 0;
+        }
+
+        .top {
+            position: relative;
+            top: 0;
+        }
+
+        .price {
+            background-color: rgb(255, 255, 255);
+            color: brown;
+        }
+
+        .bon {
+            background-color: rgb(147, 147, 147);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-5 top">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="container red">
+                    <h3 class="price">BETRAG: <span id="betrag"></span></h3>
+                </div>
+            </div>
+            <div class="col-lg-8">
+            </div>
+            <div class="col-lg-2">
+                <select id="item-select" onchange="changeImage()">
+                    <option value="Leonie">LEONIE</option>
+                    <option value="Ella">ELLA</option>
+                </select>
+                <div class="item-container">
+                    <img id="selected-image" src="img/Leonie.png" alt="Ausgewähltes Bild" onclick="changeImage()">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-10">
+        <div class="row">
+
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-sm-4 d-flex align-items-stretch mb-4">
+                        <div class="card h-100">
+                            <h3 class="card-header d-flex">MILCH 1€</h3>
+                            <div class="card-body flex-column mx-auto">
+                                <img src="img/milch.webp" alt="Milch" onclick="countClick('milch')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 d-flex align-items-stretch mb-4">
+                        <div class="card h-100">
+                            <h3 class="card-header d-flex">TOAST 2€</h3>
+                            <div class="card-body flex-column mx-auto">
+                                <img src="img/toast.webp" alt="Toast" onclick="countClick('toast')">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 d-flex align-items-stretch mb-4">
+                        <div class="card h-100">
+                            <h3 class="card-header d-flex">ZAHNPASTA 4€</h3>
+                            <div class="card-body flex-column mx-auto">
+                                <img src="img/zahnpasta.png" alt="Zahnpasta" onclick="countClick('zahnpasta')">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 d-flex align-items-stretch mb-4">
+                        <div class="card h-100">
+                            <h3 class="card-header d-flex">EIER 3€</h3>
+                            <div class="card-body flex-column mx-auto">
+                                <img src="img/eier.png" alt="Eier" onclick="countClick('eier')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-flex align-items-stretch mb-4">
+                        <div class="card h-100">
+                            <h3 class="card-header d-flex">NUTELLA 3€</h3>
+                            <div class="card-body flex-column mx-auto">
+                                <img src="img/nutella.webp" alt="Nutella" onclick="countClick('nutella')">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 d-flex align-items-stretch mb-4">
+                        <div class="card h-100">
+                            <h3 class="card-header d-flex">TEMPO 4€</h3>
+                            <div class="card-body flex-column mx-auto">
+                                <img src="img/tempo.webp" alt="Nutella" onclick="countClick('tempo')">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 d-flex align-items-stretch mb-4">
+                        <div class="card h-100">
+                            <h3 class="card-header d-flex">POMMES 4€</h3>
+                            <div class="card-body flex-column mx-auto">
+                                <img src="img/pommes.jpeg" alt="Pommes" onclick="countClick('pommes')">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 d-flex align-items-stretch mb-4">
+                        <div class="card h-100">
+                            <h3 class="card-header d-flex">KETCHUP 3€</h3>
+                            <div class="card-body flex-column mx-auto">
+                                <img src="img/ketchup.webp" alt="Ketchup" onclick="countClick('ketchup')">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 d-flex align-items-stretch mb-4">
+                        <div class="card h-100">
+                            <h3 class="card-header d-flex">BROT 3€</h3>
+                            <div class="card-body flex-column mx-auto">
+                                <img src="img/brot.webp" alt="Ketchup" onclick="countClick('brot')">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 d-flex align-items-stretch mb-4">
+                        <div class="card h-100">
+                            <h3 class="card-header d-flex">TRAUBEN 2€</h3>
+                            <div class="card-body flex-column mx-auto">
+                                <img src="img/weintrauben.webp" alt="Trauben" onclick="countClick('trauben')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Weitere Items können hier hinzugefügt werden -->
+
+            </div>
+
+            <!-- KASSENZETTEL-->
+            <div class="col-lg-4">
+                <div class="sticky-top">
+                    <div class="col-lg-12 d-flex align-items-stretch mb-4">
+                        <div class="card h-100 bon">
+                            <h3 class="card-header d-flex">KASSENZETTEL</h3>
+                            <div class="card-body flex-column">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <ul id="list">
+                                        </ul>
+                                    </div>
+                                    <div class="col-3">
+                                        <ul id="list_amount">
+                                        </ul>
+                                    </div>
+                                    <div class="col-3">
+                                        <ul id="list_price">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+
+    <button onclick="reset()">Zurücksetzen</button>
+
+    <audio id="scanner-sound" src="img/scanner_sound.mp3"></audio>
+
+    <script>
+
+        // Zählt die Klicks pro Item
+        const counts = {
+            milch: 0,
+            toast: 0,
+            zahnpasta: 0,
+            eier: 0,
+            nutella: 0,
+            tempo: 0,
+            pommes: 0,
+            ketchup: 0,
+            trauben: 0,
+            brot: 0
+        };
+
+        const price = {
+            milch: 1,
+            toast: 2,
+            zahnpasta: 4,
+            eier: 3,
+            nutella: 4,
+            tempo: 4,
+            pommes: 4,
+            ketchup: 3,
+            trauben: 2,
+            brot: 3
+        }
+
+        function update_kassenbon(item) {
+            const list = document.getElementById("list");
+            const amount = document.getElementById("list_amount");
+            const price_list = document.getElementById("list_price");
+
+            const entries = Array.from(list.getElementsByTagName("p"));
+            const item_exists = entries.some(entry => entry.textContent === item);
+
+            if (!item_exists) {
+                const new_entry = document.createElement("p");
+                new_entry.textContent = item;
+                list.appendChild(new_entry);
+
+                const new_amount = document.createElement("p");
+                new_amount.setAttribute("id", item + "-amount");
+                amount.appendChild(new_amount);
+
+                const new_price = document.createElement("p");
+                new_price.setAttribute("id", item + "-price");
+                price_list.appendChild(new_price);
+            }
+            
+            // update amount on kassenzettel
+            const amount_update = document.getElementById(item + "-amount");
+            amount_update.textContent = counts[item] + "x";
+
+            // update price on kassenzettel
+            const price_update = document.getElementById(item + "-price");
+            price_update.textContent = counts[item] * price[item] + "€";
+
+        }
+
+        function update_sum() {
+            let res = 0;
+            for (let item in counts) {
+                res = res + counts[item] * price[item]
+            }
+            document.getElementById("betrag").innerText = res + " €";
+        }
+
+        // Funktion zum Erhöhen der Klickzahl und Anzeige im HTML
+        function countClick(item) {
+            counts[item]++;
+            // document.getElementById(`${item}-count`).innerText = counts[item];
+            const sound = document.getElementById("scanner-sound");
+            sound.play();
+            update_sum();
+            update_kassenbon(item);
+        }
+
+        // Funktion zum Zurücksetzen der Klickzahlen
+        function reset() {
+            for (let item in counts) {
+                counts[item] = 0;
+                // document.getElementById(`${item}-count`).innerText = counts[item];
+            }
+
+            //rest gesamtbetrag
+            document.getElementById("betrag").innerText = "";
+
+            const list = document.getElementById("list");
+            const amount = document.getElementById("list_amount");
+            const price_list = document.getElementById("list_price");
+
+            while (list.firstChild) {
+                list.removeChild(list.lastChild);
+                amount.removeChild(amount.lastChild);
+                price_list.removeChild(price_list.lastChild);
+            }
+
+            
+        }
+
+        function changeImage() {
+            const itemSelect = document.getElementById("item-select");
+            currentItem = itemSelect.value;
+
+            const imageMap = {
+                Leonie: "img/Leonie.png",
+                Ella: "img/Ella.png",
+            };
+
+            document.getElementById("selected-image").src = imageMap[currentItem];
+        }
+
+    </script>
+
+</body>
+
+</html>
