@@ -146,6 +146,15 @@
 
                     <div class="col-sm-4 d-flex align-items-stretch mb-4">
                         <div class="card h-100">
+                            <h3 class="card-header d-flex">ZAHNBÜRSTE 4€</h3>
+                            <div class="card-body flex-column mx-auto">
+                                <img src="img/zahnbürste.webp" alt="Zahnbürste" onclick="countClick('Zahnbürste')">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 d-flex align-items-stretch mb-4">
+                        <div class="card h-100">
                             <h3 class="card-header d-flex">EIER 3€</h3>
                             <div class="card-body flex-column mx-auto">
                                 <img src="img/eier.png" alt="Eier" onclick="countClick('Eier')">
@@ -224,6 +233,50 @@
                         </div>
                     </div>
 
+                    <div class="col-sm-4 d-flex align-items-stretch mb-4">
+                        <div class="card h-100">
+                            <h3 class="card-header d-flex">MARMELADE 3€</h3>
+                            <div class="card-body flex-column mx-auto">
+                                <img src="img/marmelade.webp" alt="Marmelade" onclick="countClick('Marmelade')">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 d-flex align-items-stretch mb-4">
+                        <div class="card h-100">
+                            <h3 class="card-header d-flex">Schuhe 80€</h3>
+                            <div class="card-body flex-column mx-auto">
+                                <img src="img/schuhe.webp" alt="Schuhe" onclick="countClick('Schuhe')">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 d-flex align-items-stretch mb-4">
+                        <div class="card h-100">
+                            <h3 class="card-header d-flex">JOGHURT 1€</h3>
+                            <div class="card-body flex-column mx-auto">
+                                <img src="img/joghurt.webp" alt="Joghurt" onclick="countClick('Joghurt')">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-4 d-flex align-items-stretch mb-4">
+                        <div class="card h-100">
+                            <h3 class="card-header d-flex">Kirsche 2€</h3>
+                            <div class="card-body flex-column mx-auto">
+                                <img src="img/kirsche.webp" alt="Kirsche" onclick="countClick('Kirsche')">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 d-flex align-items-stretch mb-4">
+                        <div class="card h-100">
+                            <h3 class="card-header d-flex">Apfel 1€</h3>
+                            <div class="card-body flex-column mx-auto">
+                                <img src="img/apfel.webp" alt="Apfel" onclick="countClick('Apfel')">
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 <!-- Weitere Items können hier hinzugefügt werden -->
@@ -273,6 +326,7 @@
             Milch: 0,
             Toast: 0,
             Zahnpasta: 0,
+            Zahnbürste: 0,  
             Eier: 0,
             Nutella: 0,
             Tempo: 0,
@@ -281,13 +335,19 @@
             Trauben: 0,
             Brot: 0,
             Quetschi: 0,
-            Chips: 0
+            Chips: 0,
+            Marmelade: 0,
+            Joghurt: 0,
+            Kirsche: 0,
+            Apfel: 0,
+            Schuhe: 0
         };
 
         const price = {
             Milch: 1,
             Toast: 2,
             Zahnpasta: 4,
+            Zahnbürste: 1,
             Eier: 3,
             Nutella: 4,
             Tempo: 4,
@@ -296,7 +356,12 @@
             Trauben: 2,
             Brot: 3,
             Quetschi: 1,
-            Chips: 2
+            Chips: 2,
+            Marmelade: 3,
+            Joghurt: 1,
+            Kirsche: 2,
+            Apfel: 1,
+            Schuhe: 80
         }
 
         function update_kassenbon(item) {
